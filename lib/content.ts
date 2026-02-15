@@ -69,6 +69,7 @@ export interface GlossaryTerm {
 // ============================================
 
 export async function getAllGuides(): Promise<Guide[]> {
+  if (!supabase) return [];
   const { data, error } = await supabase
     .from("guides")
     .select("*")
@@ -83,6 +84,7 @@ export async function getAllGuides(): Promise<Guide[]> {
 }
 
 export async function getAllGuideSlugs(): Promise<string[]> {
+  if (!supabase) return [];
   const { data } = await supabase
     .from("guides")
     .select("slug")
@@ -91,6 +93,7 @@ export async function getAllGuideSlugs(): Promise<string[]> {
 }
 
 export async function getGuideBySlug(slug: string): Promise<Guide | null> {
+  if (!supabase) return null;
   const { data, error } = await supabase
     .from("guides")
     .select("*")
@@ -106,6 +109,7 @@ export async function getGuideBySlug(slug: string): Promise<Guide | null> {
 }
 
 export async function getGuidesBySection(section: string): Promise<Guide[]> {
+  if (!supabase) return [];
   const { data, error } = await supabase
     .from("guides")
     .select("*")
@@ -122,6 +126,7 @@ export async function getGuidesBySection(section: string): Promise<Guide[]> {
 // ============================================
 
 export async function getAllStories(): Promise<Story[]> {
+  if (!supabase) return [];
   const { data, error } = await supabase
     .from("stories")
     .select("*")
@@ -136,6 +141,7 @@ export async function getAllStories(): Promise<Story[]> {
 }
 
 export async function getAllStorySlugs(): Promise<string[]> {
+  if (!supabase) return [];
   const { data } = await supabase
     .from("stories")
     .select("slug")
@@ -144,6 +150,7 @@ export async function getAllStorySlugs(): Promise<string[]> {
 }
 
 export async function getStoryBySlug(slug: string): Promise<Story | null> {
+  if (!supabase) return null;
   const { data, error } = await supabase
     .from("stories")
     .select("*")
@@ -159,6 +166,7 @@ export async function getStoryBySlug(slug: string): Promise<Story | null> {
 }
 
 export async function getStoriesByCategory(category: string): Promise<Story[]> {
+  if (!supabase) return [];
   const { data, error } = await supabase
     .from("stories")
     .select("*")
@@ -175,6 +183,7 @@ export async function getStoriesByCategory(category: string): Promise<Story[]> {
 // ============================================
 
 export async function getAllGlossaryTerms(): Promise<GlossaryTerm[]> {
+  if (!supabase) return [];
   const { data, error } = await supabase
     .from("glossary")
     .select("*")
@@ -192,6 +201,7 @@ export async function getAllGlossaryTerms(): Promise<GlossaryTerm[]> {
 // ============================================
 
 export async function getSettings(): Promise<Record<string, string>> {
+  if (!supabase) return {};
   const { data, error } = await supabase
     .from("settings")
     .select("key, value");
@@ -209,7 +219,7 @@ export async function getSettings(): Promise<Record<string, string>> {
 // ============================================
 
 export async function getRelatedGuides(slugs: string[]): Promise<Guide[]> {
-  if (!slugs || slugs.length === 0) return [];
+  if (!supabase || !slugs || slugs.length === 0) return [];
   const { data } = await supabase
     .from("guides")
     .select("*")
@@ -219,7 +229,7 @@ export async function getRelatedGuides(slugs: string[]): Promise<Guide[]> {
 }
 
 export async function getRelatedStories(slugs: string[]): Promise<Story[]> {
-  if (!slugs || slugs.length === 0) return [];
+  if (!supabase || !slugs || slugs.length === 0) return [];
   const { data } = await supabase
     .from("stories")
     .select("*")
