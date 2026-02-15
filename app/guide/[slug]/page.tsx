@@ -50,29 +50,27 @@ export default async function GuidePage({ params }: Props) {
     <div className="pt-11">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
-      {/* Hero */}
-      <div className="bg-white border-b border-neutral-200">
-        <div className="max-w-[1400px] mx-auto px-8 md:px-16 lg:px-24 xl:px-32 py-16 md:py-24">
-          <div className="max-w-2xl mx-auto md:mx-0 md:ml-[8%]">
-            <div className="flex items-center gap-3 mb-6">
-              <Link href="/#guides" className="text-caption text-terracotta font-medium hover:underline">
-                GUIDES
-              </Link>
-              <span className="text-neutral-300">→</span>
-              <span className="text-caption text-neutral-400">{guide.section?.replace(/-/g, " ").toUpperCase()}</span>
-            </div>
-            <h1 className="font-display text-display-lg md:text-display-xl font-bold text-neutral-900 mb-4">
-              {guide.title}
-            </h1>
-            <p className="text-lg text-neutral-500 font-light leading-relaxed mb-6">
-              {guide.subtitle || guide.excerpt}
-            </p>
-            <div className="flex items-center gap-4 text-caption text-neutral-300">
-              {guide.city && <span>{guide.city.toUpperCase()}</span>}
-              {guide.budget_range && <><span>·</span><span>{guide.budget_range}</span></>}
-              {guide.read_time && <><span>·</span><span>{guide.read_time}</span></>}
-              {guide.last_updated && <><span>·</span><span>Updated {guide.last_updated}</span></>}
-            </div>
+      {/* Hero — generous whitespace, content floats */}
+      <div className="px-8 md:px-[8%] lg:px-[12%] py-20 md:py-32">
+        <div className="max-w-2xl">
+          <div className="flex items-center gap-3 mb-10">
+            <Link href="/#guides" className="text-[10px] tracking-[0.25em] text-terracotta font-medium hover:underline underline-offset-4">
+              GUIDES
+            </Link>
+            <span className="text-neutral-200">→</span>
+            <span className="text-[10px] tracking-[0.25em] text-neutral-300">{guide.section?.replace(/-/g, " ").toUpperCase()}</span>
+          </div>
+          <h1 className="font-display text-display-lg md:text-display-xl font-bold text-neutral-900 mb-6">
+            {guide.title}
+          </h1>
+          <p className="text-lg md:text-xl text-neutral-400 font-light leading-relaxed mb-10 max-w-lg">
+            {guide.subtitle || guide.excerpt}
+          </p>
+          <div className="flex items-center gap-6 text-[10px] tracking-[0.2em] text-neutral-300">
+            {guide.city && <span>{guide.city.toUpperCase()}</span>}
+            {guide.budget_range && <><span className="text-neutral-200">·</span><span>{guide.budget_range}</span></>}
+            {guide.read_time && <><span className="text-neutral-200">·</span><span>{guide.read_time}</span></>}
+            {guide.last_updated && <><span className="text-neutral-200">·</span><span>Updated {guide.last_updated}</span></>}
           </div>
         </div>
       </div>
@@ -82,25 +80,21 @@ export default async function GuidePage({ params }: Props) {
 
       {/* Related */}
       {relatedGuides.length > 0 && (
-        <div className="border-t border-neutral-200">
-          <div className="max-w-[1400px] mx-auto px-8 md:px-16 lg:px-24 xl:px-32 py-16">
-            <p className="text-caption text-neutral-400 font-medium mb-8">RELATED GUIDES</p>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-0">
-              {relatedGuides.slice(0, 3).map((rg, i) => (
-                <Link
-                  key={rg.slug}
-                  href={`/guide/${rg.slug}`}
-                  className={`group block p-6 hover:bg-neutral-50 transition-colors ${
-                    i > 0 ? "md:border-l border-neutral-200" : ""
-                  }`}
-                >
-                  <h3 className="font-display text-xl font-bold text-neutral-900 group-hover:text-terracotta transition-colors mb-2">
-                    {rg.title}
-                  </h3>
-                  <p className="text-xs text-neutral-400">{rg.excerpt}</p>
-                </Link>
-              ))}
-            </div>
+        <div className="px-8 md:px-[8%] lg:px-[12%] py-20 md:py-32">
+          <p className="text-[10px] tracking-[0.25em] text-neutral-300 font-mono mb-10">RELATED GUIDES</p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-16">
+            {relatedGuides.slice(0, 3).map((rg) => (
+              <Link
+                key={rg.slug}
+                href={`/guide/${rg.slug}`}
+                className="group"
+              >
+                <h3 className="font-display text-2xl font-bold text-neutral-900 group-hover:text-terracotta transition-colors mb-3">
+                  {rg.title}
+                </h3>
+                <p className="text-xs text-neutral-400 leading-relaxed">{rg.excerpt}</p>
+              </Link>
+            ))}
           </div>
         </div>
       )}

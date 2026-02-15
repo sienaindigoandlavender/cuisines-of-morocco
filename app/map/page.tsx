@@ -24,25 +24,24 @@ export default async function MapPage() {
 
   return (
     <div className="pt-11">
-      <div className="max-w-[1400px] mx-auto px-8 md:px-16 lg:px-24 xl:px-32 py-14 md:py-16">
-        <div className="flex items-center gap-3 mb-6">
-          <span className="text-[9px] tracking-[0.25em] text-terracotta font-mono">INTERACTIVE</span>
-          <div className="w-8 h-[1px] bg-neutral-200" />
+      <div className="px-8 md:px-[8%] lg:px-[12%] py-16 md:py-24">
+        <div className="max-w-2xl">
+          <p className="text-[9px] tracking-[0.3em] text-terracotta font-mono mb-6">INTERACTIVE</p>
+          <h1 className="font-display text-4xl md:text-5xl font-bold text-neutral-900 mb-4 leading-[0.95]">City Map</h1>
+          <p className="text-sm text-neutral-400 leading-[1.8] max-w-lg mb-10">
+            Every restaurant, stall, and food spot we recommend — on one map. Click a pin for details, prices, and what to order.
+          </p>
         </div>
-        <h1 className="font-display text-4xl md:text-5xl font-bold text-neutral-900 mb-3">City Map</h1>
-        <p className="text-sm text-neutral-400 max-w-lg mb-10">
-          Every restaurant, stall, and food spot we recommend — on one map. Click a pin for details, prices, and what to order.
-        </p>
       </div>
 
       <CityMapClient locations={allLocations} />
 
       {/* Location list below map */}
-      <div className="max-w-[1400px] mx-auto px-6 md:px-10 py-12">
-        <p className="text-caption text-neutral-400 font-medium mb-6">ALL LOCATIONS</p>
-        <div className="border-t border-neutral-200">
+      <div className="px-8 md:px-[8%] lg:px-[12%] py-16">
+        <p className="text-[10px] tracking-[0.25em] text-neutral-300 font-mono mb-8">ALL LOCATIONS</p>
+        <div>
           {allLocations.map((loc, i) => (
-            <div key={i} className="grid grid-cols-12 gap-4 py-4 border-b border-neutral-100 px-2">
+            <div key={i} className="grid grid-cols-12 gap-4 py-5 border-b border-neutral-100 px-2 md:px-4">
               <div className="col-span-1">
                 <span className="flex-shrink-0 w-6 h-6 rounded-full bg-terracotta text-white text-[10px] font-semibold flex items-center justify-center">
                   {i + 1}

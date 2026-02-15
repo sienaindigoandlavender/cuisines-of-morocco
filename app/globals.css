@@ -36,19 +36,20 @@
   }
 
   .prose-editorial p {
-    @apply mb-6;
+    @apply mb-7;
   }
 
   .prose-editorial h2 {
-    @apply font-display text-display-md font-bold text-neutral-900 mt-12 mb-6;
+    @apply font-display text-display-md font-bold text-neutral-900 mt-16 mb-8;
   }
 
   .prose-editorial h3 {
-    @apply font-display text-2xl font-bold text-neutral-900 mt-10 mb-4;
+    @apply font-display text-2xl font-bold text-neutral-900 mt-14 mb-5;
   }
 
   .prose-editorial blockquote {
-    @apply font-display text-2xl italic text-neutral-700 border-l-2 border-terracotta pl-6 my-8;
+    @apply font-display text-2xl italic text-neutral-700 pl-8 my-10;
+    border-left: 2px solid #C2410C;
   }
 
   .prose-editorial ul, .prose-editorial ol {

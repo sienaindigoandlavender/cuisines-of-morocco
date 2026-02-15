@@ -30,19 +30,21 @@ export default async function GlossaryPage() {
     <div className="pt-11">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
-      <div className="max-w-[1400px] mx-auto px-8 md:px-16 lg:px-24 xl:px-32 py-20 md:py-28">
-        <p className="text-caption text-terracotta font-medium mb-4">REFERENCE</p>
-        <h1 className="font-display text-display-lg font-bold text-neutral-900 mb-4">Glossary</h1>
-        <p className="text-lg text-neutral-500 font-light max-w-lg mb-12">
-          Moroccan culinary terms — the vocabulary you need to eat with understanding.
-        </p>
+      <div className="px-8 md:px-[8%] lg:px-[12%] py-20 md:py-32">
+        <div className="max-w-2xl mb-20">
+          <p className="text-[10px] tracking-[0.25em] text-terracotta font-mono mb-6">REFERENCE</p>
+          <h1 className="font-display text-display-lg md:text-display-xl font-bold text-neutral-900 mb-6">Glossary</h1>
+          <p className="text-lg text-neutral-400 font-light max-w-lg leading-relaxed">
+            Moroccan culinary terms — the vocabulary you need to eat with understanding.
+          </p>
+        </div>
 
         {categories.map((cat) => (
-          <div key={cat} className="mb-12">
-            <p className="text-label text-neutral-400 mb-6">{cat.toUpperCase()}</p>
+          <div key={cat} className="mb-16 last:mb-0">
+            <p className="text-[10px] tracking-[0.3em] text-neutral-300 font-mono mb-8">{cat.toUpperCase()}</p>
             <div className="space-y-0">
               {terms.filter((g) => g.category === cat).map((g) => (
-                <div key={g.term} className="grid grid-cols-1 md:grid-cols-12 gap-2 md:gap-6 py-5 border-b border-neutral-100">
+                <div key={g.term} className="grid grid-cols-1 md:grid-cols-12 gap-3 md:gap-12 py-6 border-b border-neutral-100">
                   <div className="md:col-span-3">
                     <p className="font-display text-xl font-bold text-neutral-900">{g.term}</p>
                     <p className="text-xs text-neutral-400 mt-1">
@@ -51,8 +53,8 @@ export default async function GlossaryPage() {
                       {g.pronunciation && <span className="italic">{g.pronunciation}</span>}
                     </p>
                   </div>
-                  <div className="md:col-span-9">
-                    <p className="text-body text-neutral-600">{g.definition}</p>
+                  <div className="md:col-span-8 md:col-start-5">
+                    <p className="text-body text-neutral-500 leading-relaxed">{g.definition}</p>
                   </div>
                 </div>
               ))}

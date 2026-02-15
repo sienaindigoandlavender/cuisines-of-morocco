@@ -21,20 +21,20 @@ export default async function LegalPage({ params }: Props) {
 
   let page = pages.find((p: any) => p.slug === slug);
   if (!page) {
-    // Fallback
     return (
       <div className="pt-11">
-        <div className="max-w-3xl mx-auto px-8 md:px-16 lg:px-24 py-20 md:py-28">
-          <h1 className="font-display text-display-md font-bold text-neutral-900 mb-8 capitalize">
-            {params.legalPage.replace(/-/g, " ")}
-          </h1>
-          <p className="text-body text-neutral-500">Content loading from Nexus. Please check back.</p>
+        <div className="px-8 md:px-[8%] lg:px-[12%] py-20 md:py-32">
+          <div className="max-w-2xl">
+            <h1 className="font-display text-display-md font-bold text-neutral-900 mb-8 capitalize">
+              {params.legalPage.replace(/-/g, " ")}
+            </h1>
+            <p className="text-body text-neutral-500">Content loading from Nexus. Please check back.</p>
+          </div>
         </div>
       </div>
     );
   }
 
-  // Resolve {{variables}} from site config
   let content = page.content || "";
   if (siteConfig) {
     Object.entries(siteConfig).forEach(([key, value]) => {
@@ -44,14 +44,16 @@ export default async function LegalPage({ params }: Props) {
 
   return (
     <div className="pt-11">
-      <div className="max-w-3xl mx-auto px-8 md:px-16 lg:px-24 py-20 md:py-28">
-        <h1 className="font-display text-display-md font-bold text-neutral-900 mb-8">
-          {page.title}
-        </h1>
-        <div
-          className="prose-editorial"
-          dangerouslySetInnerHTML={{ __html: content }}
-        />
+      <div className="px-8 md:px-[8%] lg:px-[12%] py-20 md:py-32">
+        <div className="max-w-2xl">
+          <h1 className="font-display text-display-md font-bold text-neutral-900 mb-10">
+            {page.title}
+          </h1>
+          <div
+            className="prose-editorial"
+            dangerouslySetInnerHTML={{ __html: content }}
+          />
+        </div>
       </div>
     </div>
   );

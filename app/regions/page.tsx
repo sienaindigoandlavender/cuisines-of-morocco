@@ -86,48 +86,47 @@ export default function RegionsPage() {
   return (
     <div className="pt-11">
       {/* Header */}
-      <div className="max-w-[1400px] mx-auto px-8 md:px-16 lg:px-24 xl:px-32 py-14 md:py-16">
-        <div className="flex items-center gap-3 mb-6">
-          <span className="text-[9px] tracking-[0.25em] text-terracotta font-mono">EXPLORE</span>
-          <div className="w-8 h-[1px] bg-neutral-200" />
+      <div className="px-8 md:px-[8%] lg:px-[12%] py-16 md:py-24">
+        <div className="max-w-2xl">
+          <p className="text-[9px] tracking-[0.3em] text-terracotta font-mono mb-6">EXPLORE</p>
+          <h1 className="font-display text-4xl md:text-6xl font-bold text-neutral-900 mb-5 leading-[0.95]">Food by Region</h1>
+          <p className="text-sm text-neutral-400 leading-[1.8] max-w-lg">
+            Morocco is not one cuisine. It's at least six, shaped by geography, trade routes, and who conquered what.
+          </p>
         </div>
-        <h1 className="font-display text-4xl md:text-5xl font-bold text-neutral-900 mb-3">Food by Region</h1>
-        <p className="text-sm text-neutral-400 max-w-lg mb-6">
-          Morocco is not one cuisine. It's at least six, shaped by geography, trade routes, and who conquered what. Click a region to explore.
-        </p>
       </div>
 
       {/* Map */}
       <RegionsMapClient regions={REGIONS} />
 
-      {/* Region cards */}
-      <div className="max-w-[1400px] mx-auto px-8 md:px-16 lg:px-24 xl:px-32 py-20 md:py-24">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[1px] bg-neutral-200">
+      {/* Region cards — no borders, space as separator */}
+      <div className="px-8 md:px-[8%] lg:px-[12%] py-20 md:py-32">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16 md:gap-x-16 md:gap-y-20">
           {REGIONS.map((region) => (
-            <div key={region.id} className="bg-white p-8 md:p-10 flex flex-col justify-between min-h-[280px]">
+            <div key={region.id} className="flex flex-col justify-between">
               <div>
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="w-3 h-3 rounded-full" style={{ backgroundColor: region.color }} />
-                  <span className="text-[9px] tracking-[0.25em] text-neutral-300 font-mono">{region.subtitle.toUpperCase()}</span>
+                <div className="flex items-center gap-3 mb-5">
+                  <div className="w-2 h-2 rounded-full" style={{ backgroundColor: region.color }} />
+                  <span className="text-[9px] tracking-[0.3em] text-neutral-300 font-mono">{region.subtitle.toUpperCase()}</span>
                 </div>
-                <h3 className="font-display text-3xl font-bold text-neutral-900 leading-tight mb-3">
+                <h3 className="font-display text-3xl md:text-4xl font-bold text-neutral-900 leading-tight mb-4">
                   {region.name}
                 </h3>
-                <p className="text-xs text-neutral-400 leading-relaxed mb-4">{region.description}</p>
-                <div className="flex flex-wrap gap-2 mb-6">
+                <p className="text-sm text-neutral-400 leading-[1.8] mb-5">{region.description}</p>
+                <div className="flex flex-wrap gap-2 mb-8">
                   {region.dishes.map((d) => (
-                    <span key={d} className="text-[9px] tracking-[0.1em] text-neutral-400 bg-neutral-50 px-2 py-1">{d}</span>
+                    <span key={d} className="text-[9px] tracking-[0.1em] text-neutral-400 bg-neutral-50 px-3 py-1.5">{d}</span>
                   ))}
                 </div>
               </div>
-              <div className="flex items-center gap-4">
+              <div className="flex items-center gap-6">
                 {region.story_slug && (
-                  <Link href={`/story/${region.story_slug}`} className="text-[10px] tracking-[0.15em] text-terracotta hover:text-terracotta-700 transition-colors">
+                  <Link href={`/story/${region.story_slug}`} className="text-[10px] tracking-[0.2em] text-terracotta hover:text-terracotta-700 transition-colors">
                     READ STORY →
                   </Link>
                 )}
                 {region.guide_slug && (
-                  <Link href={`/guide/${region.guide_slug}`} className="text-[10px] tracking-[0.15em] text-neutral-400 hover:text-neutral-700 transition-colors">
+                  <Link href={`/guide/${region.guide_slug}`} className="text-[10px] tracking-[0.2em] text-neutral-400 hover:text-neutral-700 transition-colors">
                     GUIDE
                   </Link>
                 )}
