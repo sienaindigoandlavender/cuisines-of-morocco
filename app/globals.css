@@ -1,0 +1,88 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Space+Mono:wght@400;700&display=swap');
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply font-body text-ink bg-white;
+  }
+
+  ::selection {
+    @apply bg-terracotta-100 text-terracotta-700;
+  }
+}
+
+@layer components {
+  .editorial-drop::first-letter {
+    font-family: 'Playfair Display', serif;
+    font-size: 4.2em;
+    float: left;
+    line-height: 0.75;
+    margin-right: 0.08em;
+    margin-top: 0.1em;
+    color: #C2410C;
+    font-weight: 700;
+  }
+
+  .prose-editorial {
+    @apply text-body text-neutral-600 leading-[1.85];
+  }
+
+  .prose-editorial p {
+    @apply mb-6;
+  }
+
+  .prose-editorial h2 {
+    @apply font-display text-display-md font-bold text-neutral-900 mt-12 mb-6;
+  }
+
+  .prose-editorial h3 {
+    @apply font-display text-2xl font-bold text-neutral-900 mt-10 mb-4;
+  }
+
+  .prose-editorial blockquote {
+    @apply font-display text-2xl italic text-neutral-700 border-l-2 border-terracotta pl-6 my-8;
+  }
+
+  .prose-editorial ul, .prose-editorial ol {
+    @apply mb-6 pl-6;
+  }
+
+  .prose-editorial li {
+    @apply mb-2;
+  }
+
+  .prose-editorial strong {
+    @apply text-neutral-800 font-medium;
+  }
+
+  .prose-editorial a {
+    @apply text-terracotta-600 underline underline-offset-2 decoration-terracotta-200 hover:decoration-terracotta-500 transition-colors;
+  }
+}
+
+/* Mapbox overrides */
+.mapboxgl-popup-content {
+  @apply rounded-none shadow-lg p-4 font-body;
+}
+
+.mapboxgl-popup-close-button {
+  @apply text-lg px-2;
+}
+
+/* Hide scrollbars globally */
+::-webkit-scrollbar {
+  display: none;
+}
+
+* {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

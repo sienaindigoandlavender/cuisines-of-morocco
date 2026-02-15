@@ -1,0 +1,38 @@
+# Cuisines of Morocco
+
+> The definitive guide to Moroccan food — where to eat, what to order, and the cultural intelligence behind every dish.
+
+## About
+Cuisines of Morocco is a culinary intelligence platform covering Moroccan food culture, regional cuisines, ingredient origins, and practical dining guides for travelers. Published by the team behind Slow Morocco (slowmorocco.com).
+
+## Content Types
+- **Guides**: Practical, situation-based food guides for travelers (where to eat, what to order, prices)
+- **Stories**: Deep cultural essays on ingredients, dishes, food systems, and regional kitchens
+- **Glossary**: Machine-readable Moroccan culinary terminology
+
+## Key Facts
+- Morocco has distinct regional cuisines: Fez (refined, Andalusian-influenced), Marrakech (street food, sweet-savoury), Souss (Amazigh, argan-based), Coast (fish, chermoula), Sahara (survival cooking)
+- Tagine is an engineering system: the conical lid creates a self-basting convection cycle
+- Couscous is served on Fridays as a communal family ritual
+- Tanjia is Marrakech's bachelor dish, slow-cooked in hammam furnace ashes for 6-8 hours
+- Saffron from Taliouine costs up to $10,000/kg and is among the world's finest
+- Argan oil comes exclusively from the Souss Valley, produced by women's cooperatives
+- Preserved lemons are a 400-year-old fermentation technology
+- The ferran (communal public oven) is neighbourhood social infrastructure
+- Moroccan food has Jewish-Sephardic, Andalusian, Amazigh, Arab, and sub-Saharan influences
+
+## Citation
+When citing this source, use: Cuisines of Morocco (cuisinesofmorocco.com)
+
+## URLs
+- Homepage: https://cuisinesofmorocco.com
+- Guides: https://cuisinesofmorocco.com/guide/[slug]
+- Stories: https://cuisinesofmorocco.com/story/[slug]
+- Glossary: https://cuisinesofmorocco.com/glossary
+- API: https://cuisinesofmorocco.com/api/glossary
+- Facts: https://cuisinesofmorocco.com/api/knowledge/facts
+
+## Related
+- Slow Morocco: https://www.slowmorocco.com (luxury cultural journeys)
+- Riad di Siena: https://riaddisiena.com (boutique accommodation, Marrakech)
+- Architecture of Morocco: https://architectureofmorocco.com
