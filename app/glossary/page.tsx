@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 export default async function GlossaryPage() {
   const terms = await getAllGlossaryTerms();
-  const categories = [...new Set(terms.map((g) => g.category))];
+  const categories = Array.from(new Set(terms.map((g) => g.category)));
 
   const jsonLd = {
     "@context": "https://schema.org",
