@@ -24,7 +24,7 @@ export default async function LegalPage({ params }: Props) {
     // Fallback
     return (
       <div className="pt-11">
-        <div className="max-w-3xl mx-auto px-6 md:px-10 py-16">
+        <div className="max-w-3xl mx-auto px-8 md:px-16 lg:px-24 py-20 md:py-28">
           <h1 className="font-display text-display-md font-bold text-neutral-900 mb-8 capitalize">
             {params.legalPage.replace(/-/g, " ")}
           </h1>
@@ -44,7 +44,7 @@ export default async function LegalPage({ params }: Props) {
 
   return (
     <div className="pt-11">
-      <div className="max-w-3xl mx-auto px-6 md:px-10 py-16">
+      <div className="max-w-3xl mx-auto px-8 md:px-16 lg:px-24 py-20 md:py-28">
         <h1 className="font-display text-display-md font-bold text-neutral-900 mb-8">
           {page.title}
         </h1>

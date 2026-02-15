@@ -52,8 +52,8 @@ export default async function GuidePage({ params }: Props) {
 
       {/* Hero */}
       <div className="bg-white border-b border-neutral-200">
-        <div className="max-w-[1400px] mx-auto px-6 md:px-10 py-12 md:py-20">
-          <div className="max-w-2xl">
+        <div className="max-w-[1400px] mx-auto px-8 md:px-16 lg:px-24 xl:px-32 py-16 md:py-24">
+          <div className="max-w-2xl mx-auto md:mx-0 md:ml-[8%]">
             <div className="flex items-center gap-3 mb-6">
               <Link href="/#guides" className="text-caption text-terracotta font-medium hover:underline">
                 GUIDES
@@ -83,7 +83,7 @@ export default async function GuidePage({ params }: Props) {
       {/* Related */}
       {relatedGuides.length > 0 && (
         <div className="border-t border-neutral-200">
-          <div className="max-w-[1400px] mx-auto px-6 md:px-10 py-12">
+          <div className="max-w-[1400px] mx-auto px-8 md:px-16 lg:px-24 xl:px-32 py-16">
             <p className="text-caption text-neutral-400 font-medium mb-8">RELATED GUIDES</p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-0">
               {relatedGuides.slice(0, 3).map((rg, i) => (

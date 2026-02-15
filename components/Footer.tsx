@@ -19,7 +19,7 @@ export default function Footer() {
     <footer>
       {/* Level 1: Navigation */}
       <div style={{ backgroundColor: "#1f1f1f" }}>
-        <div className="max-w-[1400px] mx-auto px-6 md:px-10 py-12">
+        <div className="max-w-[1400px] mx-auto px-8 md:px-16 lg:px-24 xl:px-32 py-16">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-[10px]">
             <div>
               <p className="tracking-[0.2em] text-white/40 mb-4">CUISINES OF MOROCCO</p>
@@ -60,7 +60,7 @@ export default function Footer() {
 
       {/* Level 2: Content Network */}
       <div style={{ backgroundColor: "#161616" }}>
-        <div className="max-w-[1400px] mx-auto px-6 md:px-10 py-6">
+        <div className="max-w-[1400px] mx-auto px-8 md:px-16 lg:px-24 xl:px-32 py-6">
           <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
             <span className="text-[9px] tracking-[0.2em] text-white/25">EXPLORE</span>
             {CONTENT_SITES.map((site) => (
@@ -80,7 +80,7 @@ export default function Footer() {
 
       {/* Level 3: Legal + Google Translate */}
       <div style={{ backgroundColor: "#0e0e0e" }}>
-        <div className="max-w-[1400px] mx-auto px-6 md:px-10 py-5">
+        <div className="max-w-[1400px] mx-auto px-8 md:px-16 lg:px-24 xl:px-32 py-5">
           <div className="flex flex-col md:flex-row items-center justify-between gap-3">
             <div className="flex items-center gap-4">
               {LEGAL_LINKS.map((link, i) => (

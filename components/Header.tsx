@@ -17,7 +17,7 @@ export default function Header() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-neutral-200">
       <div className="max-w-[1400px] mx-auto">
-        <div className="flex items-center justify-between px-5 md:px-10 h-11">
+        <div className="flex items-center justify-between px-8 md:px-16 lg:px-24 xl:px-32 h-11">
           <Link href="/" className="text-caption font-medium text-neutral-400 hover:text-terracotta transition-colors">
             CUISINES OF MOROCCO
           </Link>
@@ -61,7 +61,7 @@ export default function Header() {
 
         {/* Mobile menu */}
         {menuOpen && (
-          <div className="md:hidden border-t border-neutral-100 bg-white px-5 py-4">
+          <div className="md:hidden border-t border-neutral-100 bg-white px-8 py-4">
             {NAV_ITEMS.map((item) => (
               <Link
                 key={item.label}

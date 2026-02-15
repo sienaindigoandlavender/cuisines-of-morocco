@@ -24,7 +24,7 @@ export default async function MapPage() {
 
   return (
     <div className="pt-11">
-      <div className="max-w-[1400px] mx-auto px-6 md:px-10 py-10">
+      <div className="max-w-[1400px] mx-auto px-8 md:px-16 lg:px-24 xl:px-32 py-14 md:py-16">
         <div className="flex items-center gap-3 mb-6">
           <span className="text-[9px] tracking-[0.25em] text-terracotta font-mono">INTERACTIVE</span>
           <div className="w-8 h-[1px] bg-neutral-200" />

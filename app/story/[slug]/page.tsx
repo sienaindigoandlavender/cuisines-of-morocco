@@ -52,9 +52,9 @@ export default async function StoryPage({ params }: Props) {
 
       {/* Hero - split layout */}
       <div className="grid grid-cols-1 md:grid-cols-12 min-h-[80vh]">
-        <div className="md:col-span-5 flex flex-col justify-end p-8 md:p-14 pb-14 md:pb-20 bg-white relative">
+        <div className="md:col-span-5 flex flex-col justify-end p-8 md:p-16 lg:p-20 xl:pl-28 pb-16 md:pb-24 bg-white relative">
           {story.entry_number && (
-            <div className="absolute top-8 left-8 md:top-14 md:left-14">
+            <div className="absolute top-8 left-8 md:top-16 md:left-16 lg:left-20 xl:left-28">
               <span className="text-caption text-terracotta font-medium">
                 № {String(story.entry_number).padStart(2, "0")}
               </span>
@@ -86,14 +86,14 @@ export default async function StoryPage({ params }: Props) {
       </div>
 
       {/* Body */}
-      <div className="max-w-[1400px] mx-auto">
+      <div className="max-w-[1400px] mx-auto px-8 md:px-16 lg:px-24 xl:px-32">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-0 border-t border-neutral-200">
-          <div className="md:col-span-8 p-8 md:p-14">
-            <div className="max-w-xl prose-editorial">
+          <div className="md:col-span-7 py-12 md:py-16 pr-0 md:pr-16">
+            <div className="max-w-xl mx-auto md:mx-0 prose-editorial">
               <ReactMarkdown>{story.body}</ReactMarkdown>
             </div>
           </div>
-          <div className="md:col-span-4 p-8 md:p-14 md:border-l border-neutral-200">
+          <div className="md:col-span-5 py-12 md:py-16 pl-0 md:pl-16 md:border-l border-neutral-200">
             {relatedGuides.length > 0 && (
               <div className="mb-10">
                 <p className="text-caption text-terracotta font-medium mb-4">PRACTICAL GUIDES</p>
@@ -116,14 +116,14 @@ export default async function StoryPage({ params }: Props) {
       {/* Related Stories */}
       {relatedStories.length > 0 && (
         <div className="border-t border-neutral-200">
-          <div className="max-w-[1400px] mx-auto px-6 md:px-10 py-12">
+          <div className="max-w-[1400px] mx-auto px-8 md:px-16 lg:px-24 xl:px-32 py-16">
             <p className="text-caption text-neutral-400 font-medium mb-8">CONTINUE READING</p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-0">
               {relatedStories.slice(0, 3).map((rs, i) => (
                 <Link
                   key={rs.slug}
                   href={`/story/${rs.slug}`}
-                  className={`group block p-6 md:p-8 hover:bg-neutral-50 transition-colors ${
+                  className={`group block p-8 md:p-10 hover:bg-neutral-50 transition-colors ${
                     i > 0 ? "md:border-l border-neutral-200" : ""
                   }`}
                 >

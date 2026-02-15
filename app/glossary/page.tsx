@@ -30,7 +30,7 @@ export default async function GlossaryPage() {
     <div className="pt-11">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
-      <div className="max-w-[1400px] mx-auto px-6 md:px-10 py-16 md:py-24">
+      <div className="max-w-[1400px] mx-auto px-8 md:px-16 lg:px-24 xl:px-32 py-20 md:py-28">
         <p className="text-caption text-terracotta font-medium mb-4">REFERENCE</p>
         <h1 className="font-display text-display-lg font-bold text-neutral-900 mb-4">Glossary</h1>
         <p className="text-lg text-neutral-500 font-light max-w-lg mb-12">

@@ -30,7 +30,7 @@ export default async function HomePage() {
       <section className="min-h-[88vh] bg-white border-b border-neutral-200">
         <div className="grid grid-cols-1 md:grid-cols-12 min-h-[88vh]">
           {/* Left: title */}
-          <div className="md:col-span-5 flex flex-col justify-between p-8 md:p-12 lg:p-16">
+          <div className="md:col-span-5 flex flex-col justify-between p-8 md:p-14 lg:p-20 xl:pl-28">
             <div className="pt-6">
               <div className="flex items-center gap-4 mb-2">
                 <div className="w-6 h-[1px] bg-terracotta" />
@@ -96,7 +96,7 @@ export default async function HomePage() {
       {/* ============================================ */}
       {guides.length >= 2 && (
         <section className="border-b border-neutral-200">
-          <div className="max-w-[1400px] mx-auto">
+          <div className="max-w-[1400px] mx-auto px-6 md:px-16 lg:px-24 xl:px-32">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-0">
               {guides.slice(0, 2).map((guide, i) => (
                 <Link
@@ -105,14 +105,14 @@ export default async function HomePage() {
                   className={`group flex flex-col ${i === 1 ? 'md:border-l border-neutral-200' : ''}`}
                 >
                   {/* Image */}
-                  <div className="relative h-64 md:h-72 bg-stone-100 overflow-hidden">
+                  <div className="relative h-64 md:h-80 bg-stone-100 overflow-hidden">
                     <div
                       className="absolute inset-0 bg-cover bg-center group-hover:scale-[1.02] transition-transform duration-500"
                       style={{ backgroundImage: `url(${guide.hero_image || PLACEHOLDER})` }}
                     />
                   </div>
                   {/* Text */}
-                  <div className="p-6 md:p-8 flex-1 flex flex-col justify-between">
+                  <div className="p-8 md:p-10 lg:p-12 flex-1 flex flex-col justify-between">
                     <div>
                       <div className="flex items-center gap-3 mb-4">
                         <span className="text-[9px] tracking-[0.25em] text-terracotta font-mono">GUIDE</span>
@@ -140,7 +140,7 @@ export default async function HomePage() {
       {/* GUIDES INDEX — Table rows by section         */}
       {/* ============================================ */}
       <section id="guides" className="bg-white">
-        <div className="max-w-[1400px] mx-auto px-6 md:px-10 py-16 md:py-24">
+        <div className="max-w-[1400px] mx-auto px-8 md:px-16 lg:px-24 xl:px-32 py-20 md:py-32">
           <div className="flex items-baseline gap-6 mb-16">
             <h2 className="font-display text-5xl md:text-7xl font-bold text-neutral-900 leading-none">Guides</h2>
             <div className="flex-1 h-[1px] bg-neutral-200 relative top-[-4px]" />
@@ -163,7 +163,7 @@ export default async function HomePage() {
                     <Link
                       key={guide.slug}
                       href={`/guide/${guide.slug}`}
-                      className="group grid grid-cols-12 gap-4 py-5 border-b border-neutral-100 hover:bg-neutral-50/70 transition-colors px-2 md:px-4"
+                      className="group grid grid-cols-12 gap-4 py-6 border-b border-neutral-100 hover:bg-neutral-50/70 transition-colors px-2 md:px-6"
                     >
                       <div className="col-span-1 flex items-baseline">
                         <span className="font-mono text-xs text-neutral-200 group-hover:text-terracotta/50 transition-colors">
@@ -197,9 +197,9 @@ export default async function HomePage() {
       {/* MAP + REGIONS PROMO                          */}
       {/* ============================================ */}
       <section className="bg-neutral-50 border-t border-b border-neutral-200">
-        <div className="max-w-[1400px] mx-auto">
+        <div className="max-w-[1400px] mx-auto px-8 md:px-16 lg:px-24 xl:px-32">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-0">
-            <Link href="/map" className="group p-10 md:p-14 hover:bg-white transition-colors">
+            <Link href="/map" className="group py-14 md:py-20 pr-8 md:pr-16 hover:bg-white/50 transition-colors">
               <p className="text-[9px] tracking-[0.25em] text-terracotta font-mono mb-4">INTERACTIVE</p>
               <h3 className="font-display text-3xl md:text-4xl font-bold text-neutral-900 group-hover:text-terracotta transition-colors leading-tight mb-4">
                 City Map
@@ -209,7 +209,7 @@ export default async function HomePage() {
               </p>
               <span className="text-[10px] tracking-[0.2em] text-terracotta font-medium">OPEN MAP →</span>
             </Link>
-            <Link href="/regions" className="group p-10 md:p-14 md:border-l border-neutral-200 hover:bg-white transition-colors">
+            <Link href="/regions" className="group py-14 md:py-20 pl-8 md:pl-16 md:border-l border-neutral-200 hover:bg-white/50 transition-colors">
               <p className="text-[9px] tracking-[0.25em] text-terracotta font-mono mb-4">EXPLORE</p>
               <h3 className="font-display text-3xl md:text-4xl font-bold text-neutral-900 group-hover:text-terracotta transition-colors leading-tight mb-4">
                 Food by Region
@@ -228,7 +228,7 @@ export default async function HomePage() {
       {/* ============================================ */}
       {stories.length > 0 && (
         <section id="stories" className="bg-white">
-          <div className="max-w-[1400px] mx-auto px-6 md:px-10 py-16 md:py-24">
+          <div className="max-w-[1400px] mx-auto px-8 md:px-16 lg:px-24 xl:px-32 py-20 md:py-32">
             <div className="flex items-baseline gap-6 mb-16">
               <h2 className="font-display text-5xl md:text-7xl font-bold text-neutral-900 leading-none">Stories</h2>
               <div className="flex-1 h-[1px] bg-neutral-200 relative top-[-4px]" />
@@ -254,7 +254,7 @@ export default async function HomePage() {
                       </span>
                     </div>
                   </div>
-                  <div className="p-6 flex-1 flex flex-col justify-between">
+                  <div className="p-8 md:p-10 flex-1 flex flex-col justify-between">
                     <div>
                       <span className="text-[9px] tracking-[0.2em] text-neutral-300 font-mono block mb-3">{story.category?.toUpperCase()}</span>
                       <h3 className="font-display text-2xl font-bold text-neutral-900 group-hover:text-terracotta transition-colors leading-tight mb-2">
@@ -279,7 +279,7 @@ export default async function HomePage() {
                   <Link
                     key={story.slug}
                     href={`/story/${story.slug}`}
-                    className="group grid grid-cols-12 gap-4 py-5 border-b border-neutral-100 hover:bg-neutral-50/70 transition-colors px-2 md:px-4"
+                    className="group grid grid-cols-12 gap-4 py-6 border-b border-neutral-100 hover:bg-neutral-50/70 transition-colors px-2 md:px-6"
                   >
                     <div className="col-span-1">
                       <span className="font-mono text-xs text-neutral-200 group-hover:text-terracotta/50 transition-colors">
@@ -310,7 +310,7 @@ export default async function HomePage() {
       {/* GLOSSARY TEASER                              */}
       {/* ============================================ */}
       <section className="border-t border-neutral-200 bg-neutral-50">
-        <div className="max-w-[1400px] mx-auto px-6 md:px-10 py-16 md:py-20">
+        <div className="max-w-[1400px] mx-auto px-8 md:px-16 lg:px-24 xl:px-32 py-20 md:py-28">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
             <div className="md:col-span-5">
               <p className="text-[9px] tracking-[0.25em] text-terracotta font-mono mb-4">REFERENCE</p>
@@ -347,7 +347,7 @@ export default async function HomePage() {
       {/* CTA — Slow Morocco                           */}
       {/* ============================================ */}
       <section className="bg-terracotta text-white">
-        <div className="max-w-[1400px] mx-auto px-6 md:px-10 py-14 md:py-16 flex flex-col md:flex-row items-center justify-between gap-6">
+        <div className="max-w-[1400px] mx-auto px-8 md:px-16 lg:px-24 xl:px-32 py-16 md:py-20 flex flex-col md:flex-row items-center justify-between gap-6">
           <div>
             <p className="text-[9px] tracking-[0.3em] text-white/50 font-mono mb-2">TASTE IT</p>
             <p className="font-display text-2xl md:text-3xl font-light italic">Culinary journeys through Morocco</p>

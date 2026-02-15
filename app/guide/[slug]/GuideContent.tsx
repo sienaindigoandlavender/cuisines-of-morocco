@@ -8,21 +8,21 @@ const GuideMap = dynamic(() => import("@/components/GuideMap"), { ssr: false });
 
 export default function GuideContent({ guide }: { guide: Guide }) {
   return (
-    <div className="max-w-[1400px] mx-auto">
+    <div className="max-w-[1400px] mx-auto px-8 md:px-16 lg:px-24 xl:px-32">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-0">
         {/* Main content */}
-        <div className="lg:col-span-8 px-6 md:px-10 py-10 md:py-14">
-          <div className="max-w-xl prose-editorial">
+        <div className="lg:col-span-7 py-12 md:py-16 pr-0 lg:pr-16">
+          <div className="max-w-xl mx-auto lg:mx-0 prose-editorial">
             <ReactMarkdown>{guide.body}</ReactMarkdown>
           </div>
         </div>
 
         {/* Sidebar with map */}
-        <div className="lg:col-span-4 lg:border-l border-neutral-200">
+        <div className="lg:col-span-5 lg:border-l border-neutral-200">
           {guide.locations && guide.locations.length > 0 && (
             <div className="sticky top-14">
               <GuideMap locations={guide.locations} />
-              <div className="p-6">
+              <div className="p-8">
                 <p className="text-caption text-terracotta font-medium mb-4">LOCATIONS</p>
                 <div className="space-y-4">
                   {guide.locations.map((loc, i) => (
