@@ -74,7 +74,7 @@ export default async function StoryPage({ params }: Props) {
           <h1 className="font-display text-display-lg md:text-display-xl font-bold text-neutral-900 mb-6">
             {story.title}
           </h1>
-          <p className="text-lg md:text-xl font-light text-neutral-400 leading-relaxed max-w-lg mb-8">
+          <p className="text-lg md:text-xl text-neutral-600 leading-relaxed max-w-lg mb-8">
             {story.subtitle || story.excerpt}
           </p>
           <div className="flex items-center gap-6 text-[10px] tracking-[0.2em] text-neutral-300">
@@ -102,7 +102,7 @@ export default async function StoryPage({ params }: Props) {
                       <p className="text-sm font-medium text-neutral-800 group-hover:text-terracotta transition-colors">
                         {g.title}
                       </p>
-                      <p className="text-xs text-neutral-400 mt-1 leading-relaxed">{g.excerpt}</p>
+                      <p className="text-xs text-neutral-500 mt-1 leading-relaxed">{g.excerpt}</p>
                     </Link>
                   ))}
                 </div>
@@ -131,7 +131,7 @@ export default async function StoryPage({ params }: Props) {
                 <h3 className="font-display text-2xl font-bold text-neutral-900 group-hover:text-terracotta transition-colors mt-2 mb-3">
                   {rs.title}
                 </h3>
-                <p className="text-xs text-neutral-400 leading-relaxed">{rs.excerpt}</p>
+                <p className="text-xs text-neutral-500 leading-relaxed">{rs.excerpt}</p>
               </Link>
             ))}
           </div>

@@ -63,7 +63,7 @@ export default async function GuidePage({ params }: Props) {
           <h1 className="font-display text-display-lg md:text-display-xl font-bold text-neutral-900 mb-6">
             {guide.title}
           </h1>
-          <p className="text-lg md:text-xl text-neutral-400 font-light leading-relaxed mb-10 max-w-lg">
+          <p className="text-lg md:text-xl text-neutral-600 leading-relaxed mb-10 max-w-lg">
             {guide.subtitle || guide.excerpt}
           </p>
           <div className="flex items-center gap-6 text-[10px] tracking-[0.2em] text-neutral-300">
@@ -92,7 +92,7 @@ export default async function GuidePage({ params }: Props) {
                 <h3 className="font-display text-2xl font-bold text-neutral-900 group-hover:text-terracotta transition-colors mb-3">
                   {rg.title}
                 </h3>
-                <p className="text-xs text-neutral-400 leading-relaxed">{rg.excerpt}</p>
+                <p className="text-xs text-neutral-500 leading-relaxed">{rg.excerpt}</p>
               </Link>
             ))}
           </div>

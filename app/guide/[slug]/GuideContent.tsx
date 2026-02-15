@@ -33,13 +33,13 @@ export default function GuideContent({ guide }: { guide: Guide }) {
                       <div>
                         <p className="text-sm font-medium text-neutral-800">{loc.name}</p>
                         {loc.description && (
-                          <p className="text-xs text-neutral-400 mt-1">{loc.description}</p>
+                          <p className="text-xs text-neutral-500 mt-1">{loc.description}</p>
                         )}
                         {loc.price_range && (
                           <p className="text-xs text-terracotta mt-1">{loc.price_range}</p>
                         )}
                         {loc.what_to_order && (
-                          <p className="text-xs text-neutral-400 italic mt-1">Order: {loc.what_to_order}</p>
+                          <p className="text-xs text-neutral-500 italic mt-1">Order: {loc.what_to_order}</p>
                         )}
                       </div>
                     </div>

@@ -90,7 +90,7 @@ export default function RegionsPage() {
         <div className="max-w-2xl">
           <p className="text-[9px] tracking-[0.3em] text-terracotta font-mono mb-6">EXPLORE</p>
           <h1 className="font-display text-4xl md:text-6xl font-bold text-neutral-900 mb-5 leading-[0.95]">Food by Region</h1>
-          <p className="text-sm text-neutral-400 leading-[1.8] max-w-lg">
+          <p className="text-sm text-neutral-600 leading-[1.8] max-w-lg">
             Morocco is not one cuisine. It's at least six, shaped by geography, trade routes, and who conquered what.
           </p>
         </div>
@@ -112,7 +112,7 @@ export default function RegionsPage() {
                 <h3 className="font-display text-3xl md:text-4xl font-bold text-neutral-900 leading-tight mb-4">
                   {region.name}
                 </h3>
-                <p className="text-sm text-neutral-400 leading-[1.8] mb-5">{region.description}</p>
+                <p className="text-sm text-neutral-600 leading-[1.8] mb-5">{region.description}</p>
                 <div className="flex flex-wrap gap-2 mb-8">
                   {region.dishes.map((d) => (
                     <span key={d} className="text-[9px] tracking-[0.1em] text-neutral-400 bg-neutral-50 px-3 py-1.5">{d}</span>

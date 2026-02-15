@@ -28,7 +28,7 @@ export default async function MapPage() {
         <div className="max-w-2xl">
           <p className="text-[9px] tracking-[0.3em] text-terracotta font-mono mb-6">INTERACTIVE</p>
           <h1 className="font-display text-4xl md:text-5xl font-bold text-neutral-900 mb-4 leading-[0.95]">City Map</h1>
-          <p className="text-sm text-neutral-400 leading-[1.8] max-w-lg mb-10">
+          <p className="text-sm text-neutral-600 leading-[1.8] max-w-lg mb-10">
             Every restaurant, stall, and food spot we recommend — on one map. Click a pin for details, prices, and what to order.
           </p>
         </div>
@@ -51,11 +51,11 @@ export default async function MapPage() {
                 <p className="text-sm font-medium text-neutral-800">{loc.name}</p>
               </div>
               <div className="hidden md:block md:col-span-4">
-                <p className="text-xs text-neutral-400">{loc.description}</p>
+                <p className="text-xs text-neutral-500">{loc.description}</p>
               </div>
               <div className="col-span-3 md:col-span-2">
                 {loc.price_range && <p className="text-xs text-terracotta">{loc.price_range}</p>}
-                {loc.what_to_order && <p className="text-xs text-neutral-400 italic mt-0.5">{loc.what_to_order}</p>}
+                {loc.what_to_order && <p className="text-xs text-neutral-500 italic mt-0.5">{loc.what_to_order}</p>}
               </div>
               <div className="col-span-4 md:col-span-2 text-right">
                 <a href={`/guide/${loc.guide_slug}`} className="text-[9px] tracking-[0.12em] text-neutral-300 hover:text-terracotta transition-colors">

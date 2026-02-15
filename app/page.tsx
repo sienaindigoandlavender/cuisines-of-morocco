@@ -44,7 +44,7 @@ export default async function HomePage() {
               <span className="italic font-normal text-neutral-400">of </span>
               Morocco
             </h1>
-            <p className="text-base md:text-lg text-neutral-500 font-light leading-relaxed max-w-md mb-10">
+            <p className="text-base md:text-lg text-neutral-600 leading-relaxed max-w-md mb-10">
               Where to eat. What to order. And the cultural<br className="hidden md:block" />
               intelligence behind every dish.
             </p>
@@ -96,7 +96,7 @@ export default async function HomePage() {
                   <h2 className="font-display text-3xl md:text-4xl font-bold text-neutral-900 group-hover:text-terracotta transition-colors leading-[1.05] mb-5">
                     {guide.title}
                   </h2>
-                  <p className="text-sm text-neutral-400 leading-[1.8] mb-6">{guide.excerpt}</p>
+                  <p className="text-sm text-neutral-600 leading-[1.8] mb-6">{guide.excerpt}</p>
                   <span className="text-[10px] tracking-[0.25em] text-terracotta opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     READ →
                   </span>
@@ -117,7 +117,7 @@ export default async function HomePage() {
             <h2 className="font-display text-5xl md:text-7xl lg:text-8xl font-bold text-neutral-900 leading-[0.9] mb-4">
               Guides
             </h2>
-            <p className="text-sm text-neutral-400 leading-[1.8] max-w-md mb-20">
+            <p className="text-sm text-neutral-600 leading-[1.8] max-w-md mb-20">
               Practical intelligence for eating in Morocco. Where to go, what to order, what to avoid.
             </p>
           </div>
@@ -144,7 +144,7 @@ export default async function HomePage() {
                         {guide.title}
                       </h3>
                     </div>
-                    <span className="hidden md:block text-xs text-neutral-300 max-w-xs leading-relaxed flex-shrink-0">
+                    <span className="hidden md:block text-xs text-neutral-500 max-w-xs leading-relaxed flex-shrink-0">
                       {guide.excerpt}
                     </span>
                     <span className="text-[10px] text-terracotta opacity-0 group-hover:opacity-100 transition-opacity flex-shrink-0">
@@ -169,7 +169,7 @@ export default async function HomePage() {
               <h3 className="font-display text-4xl md:text-5xl font-bold text-neutral-900 group-hover:text-terracotta transition-colors leading-[0.95] mb-6">
                 City Map
               </h3>
-              <p className="text-sm text-neutral-400 leading-[1.8] max-w-sm mb-8">
+              <p className="text-sm text-neutral-600 leading-[1.8] max-w-sm mb-8">
                 Every restaurant and stall we recommend in Marrakech, on one map. Filter by neighbourhood, price, or what you're craving.
               </p>
               <span className="text-[10px] tracking-[0.25em] text-terracotta font-medium">OPEN MAP →</span>
@@ -179,7 +179,7 @@ export default async function HomePage() {
               <h3 className="font-display text-4xl md:text-5xl font-bold text-neutral-900 group-hover:text-terracotta transition-colors leading-[0.95] mb-6">
                 Food by Region
               </h3>
-              <p className="text-sm text-neutral-400 leading-[1.8] max-w-sm mb-8">
+              <p className="text-sm text-neutral-600 leading-[1.8] max-w-sm mb-8">
                 Six distinct cuisines across one country. Fez court kitchens, Souss Amazigh tables, Saharan survival cooking, and the coastal fish tradition.
               </p>
               <span className="text-[10px] tracking-[0.25em] text-terracotta font-medium">EXPLORE REGIONS →</span>
@@ -199,7 +199,7 @@ export default async function HomePage() {
               <h2 className="font-display text-5xl md:text-7xl lg:text-8xl font-bold text-neutral-900 leading-[0.9] mb-4">
                 Stories
               </h2>
-              <p className="text-sm text-neutral-400 leading-[1.8] max-w-md">
+              <p className="text-sm text-neutral-600 leading-[1.8] max-w-md">
                 The cultural intelligence behind Moroccan food. History, trade routes, and the people who shape how Morocco eats.
               </p>
             </div>
@@ -224,7 +224,7 @@ export default async function HomePage() {
                   <h3 className="font-display text-2xl font-bold text-neutral-900 group-hover:text-terracotta transition-colors leading-tight mb-2">
                     {story.title}
                   </h3>
-                  <p className="text-xs text-neutral-400 leading-relaxed">{story.subtitle || story.excerpt}</p>
+                  <p className="text-xs text-neutral-500 leading-relaxed">{story.subtitle || story.excerpt}</p>
                 </Link>
               ))}
             </div>
@@ -246,7 +246,7 @@ export default async function HomePage() {
                         {story.title}
                       </h3>
                     </div>
-                    <span className="hidden md:block text-xs text-neutral-300 max-w-xs leading-relaxed flex-shrink-0">
+                    <span className="hidden md:block text-xs text-neutral-500 max-w-xs leading-relaxed flex-shrink-0">
                       {story.excerpt}
                     </span>
                     <span className="text-[9px] tracking-[0.15em] text-neutral-200 font-mono flex-shrink-0 hidden md:block">
@@ -272,7 +272,7 @@ export default async function HomePage() {
             <div className="md:col-span-4">
               <p className="text-[9px] tracking-[0.3em] text-terracotta font-mono mb-6">REFERENCE</p>
               <h2 className="font-display text-4xl md:text-5xl font-bold text-neutral-900 leading-[0.95] mb-6">Glossary</h2>
-              <p className="text-sm text-neutral-400 leading-[1.8] mb-8">
+              <p className="text-sm text-neutral-600 leading-[1.8] mb-8">
                 The vocabulary you need to eat with understanding. Every term in Arabic script, with pronunciation and context.
               </p>
               <Link href="/glossary" className="inline-block text-[10px] tracking-[0.25em] text-terracotta font-medium hover:text-terracotta-700 transition-colors">

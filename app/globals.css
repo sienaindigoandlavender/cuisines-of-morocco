@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Space+Mono:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Space+Mono:wght@400;700&display=swap');
 
 @layer base {
   html {
@@ -12,6 +12,8 @@
 
   body {
     @apply font-body text-ink bg-white;
+    font-weight: 400;
+    -webkit-text-size-adjust: 100%;
   }
 
   ::selection {
@@ -32,7 +34,7 @@
   }
 
   .prose-editorial {
-    @apply text-body text-neutral-600 leading-[1.85];
+    @apply text-body text-neutral-800 leading-[1.8];
   }
 
   .prose-editorial p {
@@ -61,7 +63,7 @@
   }
 
   .prose-editorial strong {
-    @apply text-neutral-800 font-medium;
+    @apply text-neutral-900 font-semibold;
   }
 
   .prose-editorial a {
