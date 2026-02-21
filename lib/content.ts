@@ -1,4 +1,7 @@
-import { supabase } from "./supabase";
+import { guides as _guides } from "./data/guides";
+import { stories as _stories } from "./data/stories";
+import { glossaryTerms as _glossary } from "./data/glossary";
+import { siteSettings as _settings } from "./data/settings";
 
 // ============================================
 // TYPES
@@ -65,153 +68,59 @@ export interface GlossaryTerm {
 }
 
 // ============================================
-// GUIDES
+// GUIDES (hard-coded)
 // ============================================
 
 export async function getAllGuides(): Promise<Guide[]> {
-  if (!supabase) return [];
-  const { data, error } = await supabase
-    .from("guides")
-    .select("*")
-    .eq("published", true)
-    .order("order");
-
-  if (error) {
-    console.error("Error fetching guides:", error);
-    return [];
-  }
-  return data || [];
+  return _guides;
 }
 
 export async function getAllGuideSlugs(): Promise<string[]> {
-  if (!supabase) return [];
-  const { data } = await supabase
-    .from("guides")
-    .select("slug")
-    .eq("published", true);
-  return (data || []).map((g) => g.slug);
+  return _guides.map((g) => g.slug);
 }
 
 export async function getGuideBySlug(slug: string): Promise<Guide | null> {
-  if (!supabase) return null;
-  const { data, error } = await supabase
-    .from("guides")
-    .select("*")
-    .eq("slug", slug)
-    .eq("published", true)
-    .single();
-
-  if (error) {
-    console.error("Error fetching guide:", error);
-    return null;
-  }
-  return data;
+  return _guides.find((g) => g.slug === slug) || null;
 }
 
 export async function getGuidesBySection(section: string): Promise<Guide[]> {
-  if (!supabase) return [];
-  const { data, error } = await supabase
-    .from("guides")
-    .select("*")
-    .eq("section", section)
-    .eq("published", true)
-    .order("order");
-
-  if (error) return [];
-  return data || [];
+  return _guides.filter((g) => g.section === section);
 }
 
 // ============================================
-// STORIES
+// STORIES (hard-coded)
 // ============================================
 
 export async function getAllStories(): Promise<Story[]> {
-  if (!supabase) return [];
-  const { data, error } = await supabase
-    .from("stories")
-    .select("*")
-    .eq("published", true)
-    .order("order");
-
-  if (error) {
-    console.error("Error fetching stories:", error);
-    return [];
-  }
-  return data || [];
+  return _stories;
 }
 
 export async function getAllStorySlugs(): Promise<string[]> {
-  if (!supabase) return [];
-  const { data } = await supabase
-    .from("stories")
-    .select("slug")
-    .eq("published", true);
-  return (data || []).map((s) => s.slug);
+  return _stories.map((s) => s.slug);
 }
 
 export async function getStoryBySlug(slug: string): Promise<Story | null> {
-  if (!supabase) return null;
-  const { data, error } = await supabase
-    .from("stories")
-    .select("*")
-    .eq("slug", slug)
-    .eq("published", true)
-    .single();
-
-  if (error) {
-    console.error("Error fetching story:", error);
-    return null;
-  }
-  return data;
+  return _stories.find((s) => s.slug === slug) || null;
 }
 
 export async function getStoriesByCategory(category: string): Promise<Story[]> {
-  if (!supabase) return [];
-  const { data, error } = await supabase
-    .from("stories")
-    .select("*")
-    .eq("category", category)
-    .eq("published", true)
-    .order("order");
-
-  if (error) return [];
-  return data || [];
+  return _stories.filter((s) => s.category === category);
 }
 
 // ============================================
-// GLOSSARY
+// GLOSSARY (hard-coded)
 // ============================================
 
 export async function getAllGlossaryTerms(): Promise<GlossaryTerm[]> {
-  if (!supabase) return [];
-  const { data, error } = await supabase
-    .from("glossary")
-    .select("*")
-    .order("order");
-
-  if (error) {
-    console.error("Error fetching glossary:", error);
-    return [];
-  }
-  return data || [];
+  return _glossary;
 }
 
 // ============================================
-// SETTINGS
+// SETTINGS (hard-coded)
 // ============================================
 
 export async function getSettings(): Promise<Record<string, string>> {
-  if (!supabase) return {};
-  const { data, error } = await supabase
-    .from("settings")
-    .select("key, value");
-
-  if (error) return {};
-  const settings: Record<string, string> = {};
-  (data || []).forEach((row) => {
-    settings[row.key] = row.value;
-  });
-  return settings;
+  return _settings;
 }
 
 // ============================================
@@ -219,21 +128,11 @@ export async function getSettings(): Promise<Record<string, string>> {
 // ============================================
 
 export async function getRelatedGuides(slugs: string[]): Promise<Guide[]> {
-  if (!supabase || !slugs || slugs.length === 0) return [];
-  const { data } = await supabase
-    .from("guides")
-    .select("*")
-    .in("slug", slugs)
-    .eq("published", true);
-  return data || [];
+  if (!slugs || slugs.length === 0) return [];
+  return _guides.filter((g) => slugs.includes(g.slug));
 }
 
 export async function getRelatedStories(slugs: string[]): Promise<Story[]> {
-  if (!supabase || !slugs || slugs.length === 0) return [];
-  const { data } = await supabase
-    .from("stories")
-    .select("*")
-    .in("slug", slugs)
-    .eq("published", true);
-  return data || [];
+  if (!slugs || slugs.length === 0) return [];
+  return _stories.filter((s) => slugs.includes(s.slug));
 }
